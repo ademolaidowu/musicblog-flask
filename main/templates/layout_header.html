@@ -1,0 +1,29 @@
+<!-- Header section -->
+<header class="header-section">
+    <div class="header-warp">
+        <!-- Site Logo -->
+        <a href="home.html" class="site-logo">
+            <img src="{{ url_for("static", filename="img/logo1.png") }}">
+        </a>
+        <!-- responsive -->
+        <div class="nav-switch">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!-- Main Menu -->
+        <ul class="main-menu">
+            <li class="active"><a href="{{ url_for('Home')}}">HOME</a></li>
+            <li><a href="{{ url_for('Charts')}}">CHARTS</a></li>
+            <li><a href="{{ url_for('Playlist')}}">PLAYLISTS</a></li>
+            <li><a href="dj.html">BLOG</a></li>
+            <li><a href="{{ url_for('Artists')}}">ARTISTS</a></li>
+        </ul>
+        <!-- Social Links -->
+        <div class="header-social-links">
+            <a href="https://www.instagram.com/zerogravityy__/?igshid=jhmho4u7ydm"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/zerogravityy__ "><i class="fa fa-twitter"></i></a>
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-youtube-play"></i></a>
+        </div>
+    </div>
+</header>
+<!-- Header section end -->

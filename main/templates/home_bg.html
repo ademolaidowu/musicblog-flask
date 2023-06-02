@@ -1,0 +1,34 @@
+<!-- First section -->
+{% if 0 <= clock.hour < 6  %}
+    <section class="hero-section set-bg" data-setbg="{{ url_for("static", filename="img/darkpurple.jpg") }}">
+{% elif 6 <= clock.hour < 12  %}
+    <section class="hero-section set-bg" data-setbg="{{ url_for("static", filename="img/darkred.jpg") }}">
+{% elif 12 <= clock.hour < 18  %}
+    <section class="hero-section set-bg" data-setbg="{{ url_for("static", filename="img/darkgreen.jpg") }}">
+{% elif 18 <= clock.hour < 24  %}
+    <section class="hero-section set-bg" data-setbg="{{ url_for("static", filename="img/darkcyan.jpg") }}">
+{% endif %}
+    <div class="hero-slider owl-carousel">
+        {% if post4.strftime('%A')== "Thursday" %}
+        <div class="hs-item">
+            <div class="container">
+                <span>COMING SOON</span>
+                <h2>Zero Gravity's Top 10</h2>
+            </div>
+        </div>
+        {% endif %}
+        <div class="hs-item">
+            <div class="container">
+                <span>SONG OF THE WEEK</span>
+                <h2>{{ post3.TITLE }} by {{ post3.ARTIST }}</h2>
+            </div>
+        </div>
+        <div class="hs-item">
+            <div class="container">
+                <span>ARTIST OF THE WEEK</span>
+                <h2>WATCHMAN</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- First section end -->

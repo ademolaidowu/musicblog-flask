@@ -1,0 +1,43 @@
+<!-- Chart  section -->
+<section class="chart-section">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>Zero Gravity Top 10 Songs of the Week</h2>
+        </div>
+                <h3 class="text-center">{{ post2.strftime("%B %d, %Y") }}</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <table class="chart-table">
+                {% for data in posts %}
+                    <tr>
+                        <td>{{ data.RANK }}</td>
+                        <td>
+                            <img src="{{ url_for("static", filename="img/artwork/" + data.COVER) }}" alt="#">
+                        </td>
+                        <td>
+                            <h4>{{ data.TITLE }}</h4>
+                            <p>{{ data.ARTIST }}</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+            <div class="col-lg-6">
+                <table class="chart-table">
+               {% for data in post1 %}
+                    <tr>
+                        <td>{{ data.RANK }}</td>
+                        <td><img src="{{ url_for("static", filename="img/artwork/" + data.COVER) }}" alt="#"></td>
+                        <td>
+                            <h4>{{ data.TITLE }}</h4>
+                            <p>{{ data.ARTIST }}</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+        </div>
+        <h4 class="text-center">Check out the Zero Gravity Charts for the week <a href="{{ url_for('Playlist')}}"><i>here</i></a></h4>
+    </div>
+</section>
+<!--  Chart section end -->

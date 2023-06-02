@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+    <ul class="justify-content-center">
+        <div class="container">
+            <li class="col-4"><a class="active" href="{{ url_for('Charts')}}">ZG Top 10</a></li>
+            <li class="col-4"><a href="{{ url_for('CUrank')}}">CU Top 30</a></li>
+            <li class="col-4"><a href="#contact">Unilag Top 30</a></li>
+        </div>
+    </ul>
+
+	<section class="chart-section">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>Zero Gravity Top 10 Of The Week</h2>
+			</div>
+            <h3 class="text-center">{{ post2.strftime("%B %d, %Y") }}</h3>
+            <table class="chart-table">
+                <tr>
+                    <td>This Week</td>
+                    <td></td>
+                    <td></td>
+                    <td style="color: #ffffff; font-weight: bold;">PEAK</td>
+                    <td></td>
+                </tr>
+                {% for data in posts %}
+                <tr>
+                    <td>{{ data.RANK }}</td>
+                    <td><img src="{{ url_for("static", filename="img/artwork/" + data.COVER) }}" alt="#"></td>
+                    <td>
+                        <h4>{{ data.TITLE }}</h4>
+                        <p>{{ data.ARTIST }}</p>
+                    </td>
+                    <td style="color: #ffffff; font-weight: bold;">{{ data.PEAK }}</td>
+                    <td>
+                        <a href="#"><img src="{{ url_for("static", filename="img/icons/itunes.png") }}" alt=""></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </section>
+
+{% endblock content %}
